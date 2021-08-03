@@ -1,0 +1,16 @@
+html{
+/*  why i used 62.5%?
+    Default font size of browser: 16px
+    16px x 62.5 = 10px
+    10px = 1rem 
+*/
+    font-size: 62.5%;
+    box-sizing: border-box;  /*It is easier to manage boxes at padding, boarder and margin.*/
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    font-size: 1.6rem;
+    font-family: Helvetica,Arial,sans-serif;
+}
