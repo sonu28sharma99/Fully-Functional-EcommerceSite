@@ -14,3 +14,67 @@ body{
     font-size: 1.6rem;
     font-family: Helvetica,Arial,sans-serif;
 }
+
+/* Layout */
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    'header' /* its like a placeholder */
+    'main'
+    'footer';
+    grid-template-columns: 1fr; /* One fragment */
+    grid-template-rows: 5rem 1fr 5rem;
+    /* 5 rem is for header area
+        rest 1fragment is for main
+        and last 5rem is for footer
+    */
+    height: 100%;
+}
+
+header{
+    grid-area: header;  /* we are connect to this element to header above (i.e .grid-container) template */
+    background-color: #203040;
+}
+
+main{
+    grid-area: main; /* we are connect to this element to main */
+    padding: 1rem;
+}
+
+footer{
+    grid-area: footer; /* we are connect to this element to footer */
+    background-color: #203040;
+    color: #ffffff;
+}
+
+/* Common class */
+a{
+    text-decoration: none; 
+}
+
+a:hover{
+    color: #ff8000;
+}
+
+/* Style for header */
+header a{
+    color:#ffffff; /* all the link inside header change to whitee color*/
+    padding: 1rem;
+}
+
+a.brand{ /* anchor that has brand class */
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.row{
+    display: flex; /* for item next to each other not in separate line */
+    flex-wrap: wrap; /* to make flex responsive */
+    justify-content: space-between; /* create maximum distance between in item in a row */
+    align-items: center; /* setting to vertical center */
+}
+
+.row.center{ /* adding subclass to row */
+    justify-content: center;
+}
