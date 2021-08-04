@@ -1,13 +1,136 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
+html{
+  /*  why i used 62.5%?
+      Default font size of browser: 16px
+      16px x 62.5 = 10px
+      10px = 1rem 
+  */
+      font-size: 62.5%;
+      box-sizing: border-box;  /*It is easier to manage boxes at padding, boarder and margin.*/
+  }
+  
+  body{
+      margin: 0;
+      height: 100vh;
+      font-size: 1.6rem;
+      font-family: Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* root element from index.html */
+  #root{
+    height: 100%;
+  }
+
+  /* Layout */
+  .grid-container{
+      display: grid;
+      grid-template-areas:
+      'header' /* its like a placeholder */
+      'main'
+      'footer';
+      grid-template-columns: 1fr; /* One fragment */
+      grid-template-rows: 5rem 1fr 5rem;
+      /* 5 rem is for header area
+          rest 1fragment is for main
+          and last 5rem is for footer
+      */
+      height: 100%;
+  }
+  
+  header{
+      grid-area: header;  /* we are connect to this element to header above (i.e .grid-container) template */
+      background-color: #203040;
+  }
+  
+  main{
+      grid-area: main; /* we are connect to this element to main */
+      padding: 1rem;
+  }
+  
+  footer{
+      grid-area: footer; /* we are connect to this element to footer */
+      background-color: #203040;
+      color: #ffffff;
+  }
+  
+  /* Common classNameName */
+  h1{
+      font-size: 1.8rem;
+      padding: 1rem 0;
+  }
+  
+  h2{
+      font-size: 1.6rem;
+      padding: 1rem 0;
+  }
+  
+  a{
+      text-decoration: none; 
+  }
+  
+  a:hover{
+      color: #ff8000;
+  }
+  
+  /* Style for header */
+  header a{
+      color:#ffffff; /* all the link inside header change to whitee color*/
+      padding: 1rem;
+  }
+  
+  a.brand{ /* anchor that has brand classNameName */
+      color: #ffffff;
+      font-size: 3rem;
+      font-weight: bold;
+  }
+  
+  .row{
+      display: flex; /* for item next to each other not in separate line */
+      flex-wrap: wrap; /* to make flex responsive */
+      justify-content: space-between; /* create maximum distance between in item in a row */
+      align-items: center; /* setting to vertical center */
+  }
+  
+  .row.center{ /* adding subclassNameName to row */
+      justify-content: center;
+  }
+  
+  /* images */
+  img{
+      border-radius: 0.5rem;
+  }
+  
+  img.medium{
+      max-width: 29rem;
+      width: 100%;
+  }
+  
+  /* Card */
+  .card{
+      border: 0.1rem #c0c0c0 solid;
+      background-color: #f8f8f8;
+      border-radius: 0.5rem;
+      margin: 1rem;
+  }
+  
+  .card-body{
+      padding: 1rem;
+  }
+  
+  /* All direct child of card-body */
+  .card-body > *{
+      margin-bottom: 0.5rem;
+  }
+  
+  .price{
+      font-size: 2rem;
+  }
+  
+  /* Rating */
+  .rating span { /* for all span inside rating */
+      color: #f0c040;
+      margin: 0.1rem;
+  }
